@@ -30,7 +30,7 @@ Build and ship a full machine-learning solution for predicting customer churn in
 - ALB health checks hit / on port 8000; once healthy, traffic is routed to the new task.
 - Users call POST /predict or open the Gradio UI at /ui via the ALB DNS.
 
-### Roadblocks & how we solved them
+<!--### Roadblocks & how we solved them
 
 Unhealthy targets behind ALB
 
@@ -53,6 +53,7 @@ ECS redeploy not picking up the new image
 - Fixes: Force new deployment (CLI or console) after pushing the new image; optional step added to CI.
 
 Gradio UI error (“No runs found in experiment”)
+-->
 
 - Cause: Inference/UI expected an MLflow-logged model but couldn’t resolve a run.
 - Fixes: Standardized MLflow experiment name and model logging in training; inference loads the logged model consistently (and a local path for dev).
